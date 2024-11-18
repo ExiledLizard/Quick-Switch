@@ -4,9 +4,6 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.argument;
 import static net.fabricmc.fabric.api.client.command.v2.ClientCommandManager.literal;
-
-
-
 import static com.mojang.brigadier.arguments.StringArgumentType.getString;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -62,7 +59,7 @@ public class QuickSwitchClient implements ClientModInitializer {
                         //Disconnect the user from the current server/world
                         client.world.disconnect();
                         
-                        //Attept to play a sound and display a message to the user to indicate that the client has been disconnected from the server/world
+                        //Attempt to play a sound and display a message to the user to indicate that the client has been disconnected from the server/world
                         client.getSoundManager().play(PositionedSoundInstance.master(SoundEvents.BLOCK_CHEST_CLOSE, 2.0F, 2.0F));
                         client.getToastManager().add(new SystemToast(SystemToast.Type.CHUNK_LOAD_FAILURE, Text.literal("§7[§bQuick Switch§7]§3 Disconnected"), Text.literal("§7You are now disconnected from the §fserver§8/§fworld§7.")));
                          
