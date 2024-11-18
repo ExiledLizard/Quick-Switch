@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "quick-switch",
+	"version": "${version}",
+	"name": "Quick Switch",
+	"description": "This is a Fabric mod that adds a command that allows you to join a server from anywhere (from a single-player world, or a server).\n\nCommand to join to a server: /quickswitch <serverIP>\n\nIt also adds a command that allows you to leave the current world/server: /quickswitch:disconnect",
+	"authors": [
+		"ExiledLizard635"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/quick-switch/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"com.example.QuickSwitch"
+		],
+		"client": [
+			"com.example.QuickSwitchClient"
+		]
+	},
+	"mixins": [
+		"quick-switch.mixins.json",
+		{
+			"config": "quick-switch.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.3",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
